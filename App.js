@@ -15,7 +15,7 @@ const steps = document.querySelector(".steps");
 const tbody = document.querySelector("tbody") ///
 const bgSection = document.querySelector(".bg");
 const recipeBg = document.querySelector(".recipe");
-// api key:-  261f3b3db1d1493e96812d4d0c06605f
+// api key:-  8b0da00125d244f992e6809d2ef82b01
 async function CalculateBmi() {
     let bmr;
     let calories;
@@ -48,7 +48,7 @@ async function CalculateBmi() {
   
     document.querySelector("#result").innerHTML += `Your BMR is ${bmr}`;
 
-    const url = `https://api.spoonacular.com/mealplanner/generate?apiKey=261f3b3db1d1493e96812d4d0c06605f&timeFrame=day&targetCalories=${calories}`;
+    const url = `https://api.spoonacular.com/mealplanner/generate?apiKey=8b0da00125d244f992e6809d2ef82b01&timeFrame=day&targetCalories=${calories}`;
     const res = await fetch(url);
     const respData = await res.json();
     return respData;
@@ -67,7 +67,7 @@ answer.addEventListener("click", CalculateBmi);
 
 async function FoodApi() { 
 
-   const url = "https://api.spoonacular.com/mealplanner/generate?apiKey=261f3b3db1d1493e96812d4d0c06605f&timeFrame=day";
+   const url = "https://api.spoonacular.com/mealplanner/generate?apiKey=8b0da00125d244f992e6809d2ef82b01&timeFrame=day";
     const response= await fetch(url);
     const res = await response.json(); 
     return res;
@@ -86,7 +86,7 @@ async function GetRecipe(data) {
     steps.innerHTML = " ";
     data.map(async (i) => {
         try {
-           const url = `https://api.spoonacular.com/recipes/${i.id}/information?apiKey=261f3b3db1d1493e96812d4d0c06605f&includeNutrition=false`;
+           const url = `https://api.spoonacular.com/recipes/${i.id}/information?apiKey=8b0da00125d244f992e6809d2ef82b01&includeNutrition=false`;
             const response = await fetch(url);
             const res = await response.json();
             console.log("2nd res", res);
